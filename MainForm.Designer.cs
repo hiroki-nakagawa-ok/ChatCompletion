@@ -30,7 +30,8 @@
         {
             inputText = new TextBox();
             sendButton = new Button();
-            outputText = new TextBox();
+            webView = new Microsoft.Web.WebView2.WinForms.WebView2();
+            ((System.ComponentModel.ISupportInitialize)webView).BeginInit();
             SuspendLayout();
             // 
             // inputText
@@ -54,26 +55,29 @@
             sendButton.UseVisualStyleBackColor = false;
             sendButton.Click += sendButton_Click;
             // 
-            // outputText
+            // webView
             // 
-            outputText.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            outputText.Location = new Point(12, 93);
-            outputText.Multiline = true;
-            outputText.Name = "outputText";
-            outputText.ScrollBars = ScrollBars.Both;
-            outputText.Size = new Size(960, 456);
-            outputText.TabIndex = 2;
+            webView.AllowExternalDrop = true;
+            webView.CreationProperties = null;
+            webView.DefaultBackgroundColor = Color.White;
+            webView.Location = new Point(12, 93);
+            webView.Name = "webView";
+            webView.Size = new Size(960, 456);
+            webView.TabIndex = 2;
+            webView.ZoomFactor = 1D;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(984, 561);
-            Controls.Add(outputText);
+            Controls.Add(webView);
             Controls.Add(sendButton);
             Controls.Add(inputText);
             Name = "MainForm";
             Text = "AIとチャット";
+            Shown += MainForm_Shown;
+            ((System.ComponentModel.ISupportInitialize)webView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -82,6 +86,6 @@
 
         private TextBox inputText;
         private Button sendButton;
-        private TextBox outputText;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView;
     }
 }
