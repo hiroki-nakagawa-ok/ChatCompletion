@@ -34,8 +34,9 @@ public partial class MainForm : Form
             <html>
             <head>
                 <meta charset='UTF-8'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css' rel='stylesheet' crossorigin='anonymous'>
             </head>
-            <body style='font-size: 0.8em'>
+            <body style='font-size: 0.9em'>
                 {htmlContent}
             </body>
             </html>";
